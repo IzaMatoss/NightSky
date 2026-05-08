@@ -1,5 +1,6 @@
 package com.example.nightsky.fragments
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -70,6 +71,7 @@ class LogsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun refreshList() {
         val observations = ObservationRepository.getAll()
         adapter.updateData(observations)
