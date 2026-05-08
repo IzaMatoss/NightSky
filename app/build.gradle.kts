@@ -1,17 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
-    namespace = "com.nightsky.astrotracker"
+    namespace = "com.example.nightsky"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.nightsky.astrotracker"
+        applicationId = "com.example.nightsky"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

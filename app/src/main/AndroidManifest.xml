@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".`MainActivity.kt`"
+            android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -29,7 +29,7 @@
         </activity>
 
         <activity
-            android:name=".`NewObservationActivity.kt`"
+            android:name=".NewObservationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

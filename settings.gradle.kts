@@ -21,6 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "NightSky"
 include(":app")
-
-rootProject.name = "NightSky"
-include(":app")
