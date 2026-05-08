@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
 
     // Instâncias dos fragments que serão usados na navegação
-    private val logsFragment = LogsFragment`()
-    private val mapFragment = MapDataFragment`()
+    private val logsFragment = LogsFragment()
+    private val mapFragment = MapDataFragment()
     private val exploreFragment = ExploreFragment()
     private val settingsFragment = SettingsFragment()
 
@@ -40,12 +40,29 @@ class MainActivity : AppCompatActivity() {
     private fun setupNavigation() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             val fragment: Fragment = when (item.itemId) {
-                R.id.nav_logs -> { Log.d(TAG, "Nav -> Logs"); logsFragment }
-                R.id.nav_map -> { Log.d(TAG, "Nav -> Map"); mapFragment }
-                R.id.nav_explore -> { Log.d(TAG, "Nav -> Explore"); exploreFragment }
-                R.id.nav_settings -> { Log.d(TAG, "Nav -> Settings"); settingsFragment }
+                R.id.nav_logs -> {
+                    Log.d(TAG, "Nav -> Logs")
+                    logsFragment
+                }
+
+                R.id.nav_map -> {
+                    Log.d(TAG, "Nav -> Map")
+                    mapFragment
+                }
+
+                R.id.nav_explore -> {
+                    Log.d(TAG, "Nav -> Explore")
+                    exploreFragment
+                }
+
+                R.id.nav_settings -> {
+                    Log.d(TAG, "Nav -> Settings")
+                    settingsFragment
+                }
+
                 else -> return@setOnItemSelectedListener false
             }
+
             loadFragment(fragment)
             true
         }

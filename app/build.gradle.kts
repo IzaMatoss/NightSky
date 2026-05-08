@@ -40,7 +40,6 @@ android {
     }
 }
 
-// Forma alternativa e mais robusta de configurar o Java Target para Kotlin
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = "11"

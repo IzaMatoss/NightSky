@@ -1,4 +1,4 @@
-package com.example.nightsky.adapters // Ajustado para o seu projeto
+package com.example.nightsky.adapters
 
 import android.net.Uri
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.nightsky.R
 import com.example.nightsky.models.Observation
 
-class `ObservationAdapter`(
+class ObservationAdapter(
     private var observations: MutableList<Observation>,
     private val onItemClick: (Observation) -> Unit
 ) : RecyclerView.Adapter<ObservationAdapter.ObservationViewHolder>() {
@@ -29,48 +29,9 @@ class `ObservationAdapter`(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ObservationViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_observation, parent, false)
+
         return ObservationViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ObservationViewHolder, position: Int) {
-        val obs = observations[position]
-        holder.tvName.text = obs.astroName
-        holder.tvCategory.text = obs.category
-        holder.tvTimestamp.text = obs.timestamp
-        holder.tvCoords.text = "📍 %.4f°, %.4f°".format(obs.latitude, obs.longitude)
-        holder.tvNotes.text = obs.notes
-
-        // Ícones de categoria
-        val iconRes = when (obs.category.lowercase()) {
-            "planeta" -> R.drawable.ic_planet
-            "constelação", "constelacao" -> R.drawable.ic_constellation
-            "galáxia", "galaxia" -> R.drawable.ic_galaxy
-            "cometa" -> R.drawable.ic_comet
-            "estrela" -> R.drawable.ic_star_icon
-            else -> R.drawable.ic_telescope
-        }
-        holder.ivCategoryIcon.setImageResource(iconRes)
-
-        // Foto com Glide
-        if (!obs.photoUri.isNullOrEmpty()) {
-            Glide.with(holder.itemView.context)
-                .load(Uri.parse(obs.photoUri))
-                .placeholder(R.drawable.bg_space_placeholder)
-                .error(R.drawable.bg_space_placeholder)
-                .centerCrop()
-                .into(holder.ivPhoto)
-        } else {
-            holder.ivPhoto.setImageResource(R.drawable.bg_space_placeholder)
-        }
-
-        holder.itemView.setOnClickListener { onItemClick(obs) }
     }
-
-    override fun getItemCount() = observations.size
-
-    fun updateData(newList: List<Observation>) {
-        observations.clear()
-        observations.addAll(newList)
-        notifyDataSetChanged()
-    }
-}
