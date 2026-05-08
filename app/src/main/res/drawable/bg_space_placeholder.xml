@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uma layer-list permite empilhar várias camadas de desenho -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- Define uma forma de retângulo para preencher o espaço -->
+        <shape android:shape="rectangle">
+            <!-- Cria um gradiente linear para simular a profundidade do espaço -->
+            <gradient
+                android:angle="135"
+                android:startColor="#080B14"
+                android:centerColor="#0D1530"
+                android:endColor="#050810"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list>
