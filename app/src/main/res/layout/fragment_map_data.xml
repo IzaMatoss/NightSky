@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_deep_space"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Cabeçalho (Header) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_header_gradient"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:text="✦ NIGHTSKY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/star_gold"
+                android:textSize="11sp"
+                android:letterSpacing="0.3" />
+
+            <TextView
+                android:text="GPS &amp;\nLocalização"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:fontFamily="sans-serif-light"
+                android:lineSpacingMultiplier="1.1" />
+        </LinearLayout>
+
+        <!-- Cartão do GPS em Tempo Real (Live GPS Card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/nebula_blue_dim"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="📡 Posição em Tempo Real"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <ProgressBar
+                        android:id="@+id/progressLocation"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:visibility="gone"
+                        android:indeterminateTint="@color/star_gold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvSignalStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/text_hint"
+                    android:textSize="12sp"
+                    android:text="💤 GPS em standby" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@color/divider_color" />
+
+                <!-- Grade de Coordenadas (Coordinates Grid) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_coord_box"
+                        android:padding="12dp"
+                        android:layout_marginEnd="6dp">
+
+                        <TextView
+                            android:text="LATITUDE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/star_gold"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1" />
+
+                        <TextView
+                            android:id="@+id/tvLatitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="monospace"
+                            android:text="—" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_coord_box"
+                        android:padding="12dp"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:text="LONGITUDE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/star_gold"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1" />
+
+                        <TextView
+                            android:id="@+id/tvLongitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="monospace"
+                            android:text="—" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_coord_box"
+                        android:padding="12dp"
+                        android:layout_marginEnd="6dp">
+
+                        <TextView
+                            android:text="ALTITUDE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/nebula_blue"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1" />
+
+                        <TextView
+                            android:id="@+id/tvAltitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="monospace"
+                            android:text="—" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_coord_box"
+                        android:padding="12dp"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:text="PRECISÃO"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/nebula_blue"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1" />
+
+                        <TextView
+                            android:id="@+id/tvAccuracy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="monospace"
+                            android:text="—" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvLocationInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:text="Inicie o rastreamento para ver informações detalhadas." />
+
+                <Button
+                    android:id="@+id/btnStartTracking"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="14dp"
+                    android:text="▶ Iniciar Rastreamento"
+                    android:backgroundTint="@color/nebula_blue"
+                    android:textColor="@color/text_primary"
+                    style="@style/Widget.Material3.Button" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cartão de Locais das Observações (Observation Locations Card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="🗺 Locais das Observações"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <Button
+                        android:id="@+id/btnRefreshObs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="↻"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/card_bg"
+                        android:textColor="@color/star_gold"
+                        style="@style/Widget.Material3.Button.TextButton" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvObsLocations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="Carregando localizações..." />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

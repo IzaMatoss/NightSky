@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_deep_space"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Cabeçalho (Header) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_header_gradient"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:text="✦ NIGHTSKY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/star_gold"
+                android:textSize="11sp"
+                android:letterSpacing="0.3" />
+
+            <TextView
+                android:text="Sistema &amp;\nPermissões"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:fontFamily="sans-serif-light"
+                android:lineSpacingMultiplier="1.1" />
+        </LinearLayout>
+
+        <!-- Status Geral (Overall Status) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/card_bg_accent"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/star_gold_dim"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:id="@+id/tvOverallStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="⏳ Verificando permissões..." />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cartão de Permissões (Permissions Card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:text="🔐 Controle de Permissões"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="14dp" />
+
+                <!-- Status da Câmera (Camera Status) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/tvCameraStatus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:text="⏳ Câmera: Verificando..." />
+
+                    <Button
+                        android:id="@+id/btnRequestCamera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Solicitar"
+                        android:textSize="12sp"
+                        android:backgroundTint="@color/card_bg_accent"
+                        android:textColor="@color/star_gold"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+                </LinearLayout>
+
+                <!-- Status da Localização (Location Status) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:id="@+id/tvLocationStatus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:text="⏳ Localização: Verificando..." />
+
+                    <Button
+                        android:id="@+id/btnRequestLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Solicitar"
+                        android:textSize="12sp"
+                        android:backgroundTint="@color/card_bg_accent"
+                        android:textColor="@color/star_gold"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@color/divider_color" />
+
+                <Button
+                    android:id="@+id/btnRequestAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="🔓 Conceder Todas as Permissões"
+                    android:backgroundTint="@color/star_gold"
+                    android:textColor="@color/bg_deep_space"
+                    style="@style/Widget.Material3.Button" />
+
+                <Button
+                    android:id="@+id/btnOpenSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:text="⚙️ Abrir Configurações do App"
+                    android:backgroundTint="@color/card_bg_accent"
+                    android:textColor="@color/text_secondary"
+                    style="@style/Widget.Material3.Button" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cartão de Estatísticas (Stats Card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:text="📊 Estatísticas de Uso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:lineSpacingMultiplier="1.6"
+                    android:fontFamily="monospace"
+                    android:text="Carregando estatísticas..." />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cartão de Informações do App (App Info Card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:gravity="center">
+
+                <TextView
+                    android:text="✦ NightSky"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/star_gold"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-light"
+                    android:letterSpacing="0.1" />
+
+                <TextView
+                    android:text="Astro Tracker v2.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/text_hint"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:text="Diário digital para observadores astronômicos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:gravity="center" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

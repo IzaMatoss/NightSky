@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Item da aba de Histórico/Logs -->
     <item
         android:id="@+id/nav_logs"
         android:icon="@drawable/ic_logs"
-        android:title="Logs" />
+        android:title="Registros" />
+
+    <!-- Item da aba de Localização e GPS -->
     <item
         android:id="@+id/nav_map"
         android:icon="@drawable/ic_map"
-        android:title="Mapa" />
+        android:title="Mapa GPS" />
+
+    <!-- Item da aba de Catálogo Astronômico -->
     <item
         android:id="@+id/nav_explore"
-        android:icon="@drawable/ic_explore"
+        android:icon="@drawable/ic_telescope"
         android:title="Explorar" />
+
+    <!-- Item da aba de Ajustes e Permissões -->
     <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/ic_settings"
-        android:title="Ajustes" />
+        android:title="Sistema" />
+
 </menu>

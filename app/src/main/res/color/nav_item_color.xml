@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Quando o item estiver selecionado (clicado), usa a cor dourada -->
+    <item android:color="@color/star_gold" android:state_checked="true" />
+
+    <!-- Quando o item NÃO estiver selecionado, usa a cor inativa (cinza) -->
+    <item android:color="@color/nav_item_inactive" />
+</selector>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/card_bg"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Banner da Foto -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <ImageView
+                android:id="@+id/ivObservationPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_space_placeholder" />
+
+            <!-- Sobreposição de Gradiente (para melhorar leitura do texto) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_photo_overlay" />
+
+            <!-- Emblema (Badge) da Categoria -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_badge"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivCategoryIcon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_planet" />
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/star_gold"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:text="Planeta" />
+            </LinearLayout>
+
+            <!-- Título sobreposto na parte inferior da imagem -->
+            <TextView
+                android:id="@+id/tvAstroName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-light"
+                android:text="Júpiter" />
+        </FrameLayout>
+
+        <!-- Conteúdo de Texto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTimestamp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/star_gold"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:drawablePadding="4dp"
+                    android:text="2024-01-15 22:30" />
+
+                <TextView
+                    android:id="@+id/tvCoordinates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_hint"
+                    android:textSize="11sp"
+                    android:text="📍 -15.7801°, -47.9292°" />
+            </LinearLayout>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/divider_color" />
+
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.4"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Avistamento claro com 4 luas galileanas visíveis." />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_deep_space">
+
+    <!-- Cabeçalho (Header) -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_header_gradient"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✦ NIGHTSKY"
+            android:textColor="@color/star_gold"
+            android:textSize="11sp"
+            android:letterSpacing="0.3"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diário de\nObservações"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingMultiplier="1.1" />
+
+        <TextView
+            android:id="@+id/tvObsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            tools:text="15 observações registradas" />
+    </LinearLayout>
+
+    <!-- Lista de Registros (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerLogs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        tools:listitem="@layout/item_observation" />
+
+    <!-- Botão de Ação Flutuante (FAB) -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabNewObs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:text="Novo Registro"
+        android:contentDescription="Adicionar nova observação"
+        android:textColor="@color/bg_deep_space"
+        app:icon="@drawable/ic_add"
+        app:iconTint="@color/bg_deep_space"
+        android:backgroundTint="@color/star_gold"
+        app:elevation="8dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

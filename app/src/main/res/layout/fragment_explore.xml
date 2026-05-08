@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_deep_space">
+
+    <!-- Cabeçalho (Header) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_header_gradient"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:text="✦ NIGHTSKY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/star_gold"
+            android:textSize="11sp"
+            android:letterSpacing="0.3" />
+
+        <TextView
+            android:text="Explorar\nObjetos Celestes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingMultiplier="1.1" />
+
+        <TextView
+            android:id="@+id/tvExploreCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:text="Carregando catálogo..." />
+    </LinearLayout>
+
+    <!-- Chips de Filtro (Categorias) -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Todos"
+                android:checked="true"
+                style="@style/Widget.Material3.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_bg"
+                app:checkedIconTint="@color/star_gold"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPlanets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🪐 Planetas"
+                style="@style/Widget.Material3.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_bg"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipConstellations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✨ Constelações"
+                style="@style/Widget.Material3.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_bg"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGalaxies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌌 Galáxias"
+                style="@style/Widget.Material3.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_bg"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ Estrelas"
+                style="@style/Widget.Material3.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_bg"
+                android:textColor="@color/text_secondary" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Lista de Itens (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerExplore"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
+
+</LinearLayout>
