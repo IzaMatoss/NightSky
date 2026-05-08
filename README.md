@@ -33,7 +33,7 @@ NightSky/
 🚀 Como executar o projeto
 
 1. Clonar o repositório
-git clone https://github.com/seu-usuario/NightSky.git
+git clone (https://github.com/IzaMatoss/NightSky.git)
 
 2. Abrir no Android Studio
 Abra a pasta do projeto no Android Studio.
