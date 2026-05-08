@@ -22,8 +22,8 @@ Fragments
 Material Design
 ViewBinding
 
-📂 Estrutura do projeto
-NightSky/
+📂 Estrutura do projeto NightSky/
+
  ├── app/
  ├── gradle/
  ├── res/
@@ -42,10 +42,12 @@ Abra a pasta do projeto no Android Studio.
 File → Sync Project with Gradle Files
 
 4. Executar o app
-Conecte um dispositivo Android ou utilize um emulador e clique em:
+Conecte um dispositivo Android ou utilize um emulador e clique em
+
 Run ▶
 
 📸 Demonstração
+
 O aplicativo permite:
 
 registrar observações astronômicas
@@ -54,6 +56,7 @@ navegar pelas observações registradas
 acessar detalhes de cada observação
 
 🎯 Objetivo do projeto
+
 O principal objetivo deste projeto foi praticar conceitos de:
 
 desenvolvimento Android
@@ -64,6 +67,7 @@ gerenciamento de listas
 arquitetura básica de aplicativos mobile
 
 📚 Aprendizados
+
 Durante o desenvolvimento foram trabalhados conceitos importantes como:
 
 correção de dependências Gradle
