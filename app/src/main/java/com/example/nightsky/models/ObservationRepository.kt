@@ -1,4 +1,4 @@
-package com.example.nightsky.models // Ajustado para o seu pacote
+package com.example.nightsky.models
 
 // O objeto 'object' no Kotlin cria um Singleton (uma instância única para o app todo)
 object ObservationRepository {
